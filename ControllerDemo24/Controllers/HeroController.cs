@@ -46,7 +46,7 @@ namespace ControllerDemo24.Controllers
         public IActionResult Put(int id, Hero hero)
         {
             var chosen = listOfHeroes.FindIndex(h => h.id == id);
-            if(chosen == null) { return NotFound(); }
+            if(chosen == -1) { return NotFound(); }
             listOfHeroes[chosen] = hero;
             return Ok(hero);
         }
